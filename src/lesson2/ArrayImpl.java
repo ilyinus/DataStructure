@@ -136,6 +136,33 @@ public class ArrayImpl<E extends Comparable<? super E>> implements Array<E> {
     }
 
     @Override
+    public void quickSort(int from, int to) {
+        if (to - from < 1)
+            return;
+
+        E pivot = data[(from + to) / 2];
+        int i = from;
+        int j = to;
+
+        while (i <= j) {
+            while (data[i].compareTo(pivot) < 0) {
+                i++;
+            }
+            while (data[j].compareTo(pivot) > 0) {
+                j--;
+            }
+            if (i <= j) {
+                swap(i, j);
+                i++;
+                j--;
+            }
+        }
+
+        quickSort(from, i - 1);
+        quickSort(i, to);
+    }
+
+    @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("[");
         for (int i = 0; i < size - 1; i++) {

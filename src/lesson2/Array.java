@@ -23,5 +23,6 @@ public interface Array<E> {
     void sortBubble();
     void sortSelect();
     void sortInsert();
+    void quickSort(int from, int to);
 
 }
