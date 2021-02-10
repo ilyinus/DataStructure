@@ -2,14 +2,14 @@ package lesson3.queue;
 
 public class QueueImpl<E> implements IQueue<E> {
 
-    private static final int DEFAULT_HEAD = 0;
-    private static final int DEFAULT_TAIL = -1;
+    protected static final int DEFAULT_HEAD = 0;
+    protected static final int DEFAULT_TAIL = -1;
 
     protected final E[] data;
     protected int size;
 
-    private int tail;
-    private int head;
+    protected int tail;
+    protected int head;
 
     @SuppressWarnings("unchecked")
     public QueueImpl(int maxSize) {
@@ -39,13 +39,16 @@ public class QueueImpl<E> implements IQueue<E> {
             return null;
         }
 
-        if (head == data.length) {
+        E removedValue = data[head];
+        data[head] = null;
+        size--;
+
+        if (head == data.length - 1) {
             head = DEFAULT_HEAD;
+        } else {
+            head++;
         }
 
-        E removedValue = data[head];
-        data[head++] = null;
-        size--;
         return removedValue;
     }
 
