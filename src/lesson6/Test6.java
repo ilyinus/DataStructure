@@ -1,15 +1,13 @@
 package lesson6;
 
-import java.util.TreeMap;
-
 public class Test6 {
 
     public static void main(String[] args) {
-        TreeMap<String, Integer> treeMap = new TreeMap<>();
-        treeMap.put("s1", 23);
-        treeMap.put("s2", 24);
-        treeMap.put("s3", 25);
-        treeMap.put("s1", 26);
+//        TreeMap<String, Integer> treeMap = new TreeMap<>();
+//        treeMap.put("s1", 23);
+//        treeMap.put("s2", 24);
+//        treeMap.put("s3", 25);
+//        treeMap.put("s1", 26);
 
 //        TreeMap<Integer, Integer> treeMap = new TreeMap<>();
 //        treeMap.put(23, 23);
@@ -17,9 +15,9 @@ public class Test6 {
 //        treeMap.put(25, 25);
 //        treeMap.put(26, 26);
 
-        System.out.println(treeMap);
+//        System.out.println(treeMap);
 
-        Tree<Integer> tree = new TreeImpl<>();
+        MyTree<Integer> tree = new MyTreeImpl<>();
         tree.add(60);
         tree.add(50);
         tree.add(66);

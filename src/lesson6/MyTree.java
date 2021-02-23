@@ -1,6 +1,6 @@
 package lesson6;
 
-public interface Tree<E extends Comparable<? super E>> {
+public interface MyTree<E extends Comparable<? super E>> {
 
     enum TraverseMode {
         IN_ORDER,

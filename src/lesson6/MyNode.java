@@ -1,13 +1,13 @@
 package lesson6;
 
-public class Node<T extends Comparable<? super T>> {
+public class MyNode<T extends Comparable<? super T>> {
 
     private final T value;
 
-    private Node<T> leftChild;
-    private Node<T> rightChild;
+    private MyNode<T> leftChild;
+    private MyNode<T> rightChild;
 
-    public Node(T value) {
+    public MyNode(T value) {
         this.value = value;
     }
 
@@ -15,19 +15,19 @@ public class Node<T extends Comparable<? super T>> {
         return value;
     }
 
-    public Node<T> getLeftChild() {
+    public MyNode<T> getLeftChild() {
         return leftChild;
     }
 
-    public void setLeftChild(Node<T> leftChild) {
+    public void setLeftChild(MyNode<T> leftChild) {
         this.leftChild = leftChild;
     }
 
-    public Node<T> getRightChild() {
+    public MyNode<T> getRightChild() {
         return rightChild;
     }
 
-    public void setRightChild(Node<T> rightChild) {
+    public void setRightChild(MyNode<T> rightChild) {
         this.rightChild = rightChild;
     }
 
