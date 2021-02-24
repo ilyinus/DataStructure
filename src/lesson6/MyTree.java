@@ -8,6 +8,8 @@ public interface MyTree<E extends Comparable<? super E>> {
         POST_ORDER,
     }
 
+    MyNode<E> root();
+
     void add(E value);
 
     boolean contains(E value);
@@ -21,5 +23,7 @@ public interface MyTree<E extends Comparable<? super E>> {
     void display();
 
     void traverse(TraverseMode mode);
+
+    boolean isBalanced(MyNode<E> node);
 
 }
