@@ -16,7 +16,18 @@ public class MyTreeImpl<E extends Comparable<? super E>> implements MyTree<E> {
 
     private int size;
     private MyNode<E> root;
+    private int maxDeep;
 
+    public MyTreeImpl() {
+    }
+
+    public MyTreeImpl(int maxDeep) {
+        this.maxDeep = maxDeep;
+    }
+
+    public MyNode<E> root() {
+        return root;
+    }
 
     @Override
     public void add(E value) {
@@ -244,4 +255,17 @@ public class MyTreeImpl<E extends Comparable<? super E>> implements MyTree<E> {
         }
         System.out.println("................................................................");
     }
+
+    @Override
+    public boolean isBalanced(MyNode<E> node) {
+        return (node == null) ||
+                isBalanced(node.getLeftChild()) &&
+                        isBalanced(node.getRightChild()) &&
+                        Math.abs(height(node.getLeftChild()) - height(node.getRightChild())) <= 1;
+    }
+
+    public int height(MyNode<E> node) {
+        return node == null ? 0 : 1 + Math.max(height(node.getLeftChild()), height(node.getRightChild()));
+    }
+
 }
